@@ -1,0 +1,1 @@
+import{I as e,M as t,l as n,t as r}from"./_plugin-vue_export-helper-BXtmuKL-.js";var i={};function a(r,i){let a=e(`router-view`);return t(),n(a)}var o=r(i,[[`render`,a]]);export{o as default};

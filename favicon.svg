@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Studio Ziegfrid">
+  <rect width="64" height="64" rx="12" fill="#12110f"/>
+  <path d="M18 18h28L20 46h26" fill="none" stroke="#f7f2e8" stroke-width="5.5" stroke-linecap="square" stroke-linejoin="miter"/>
+  <circle cx="47" cy="17" r="3.2" fill="#e2492a"/>
+</svg>
