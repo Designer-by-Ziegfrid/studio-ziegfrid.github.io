@@ -14,12 +14,15 @@ import type {
   ParamValueZeroOrMore,
   ParamValueZeroOrOne,
 } from 'vue-router'
-import type { _ExtractParamParserType } from 'vue-router/experimental';
+import type {
+  _ExtractParamParserType,
+} from 'vue-router/experimental'
 
 declare module 'vue-router' {
   interface TypesConfig {
-    ParamParsers: never;
-    RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap;
+    _ParamParsers: {}
+    RouteNamedMap: import('vue-router/auto-routes').RouteNamedMap
+    _RouteFileInfoMap: import('vue-router/auto-routes')._RouteFileInfoMap
   }
 }
 
@@ -33,29 +36,99 @@ declare module 'vue-router/auto-routes' {
       '/',
       Record<never, never>,
       Record<never, never>,
-      '//(index)' | '//second'
-    >;
+      | '//(index)'
+      | '//[...path]'
+      | '//about'
+      | '//contact'
+      | '//services'
+      | '//work'
+      | '//work/(index)'
+      | '//work/aster-bay'
+      | '//work/drift'
+      | '//work/fold'
+      | '//work/market-day'
+    >,
     '//(index)': RouteRecordInfo<
       '//(index)',
       '/',
       Record<never, never>,
       Record<never, never>,
-      never
-    >;
-    '//second': RouteRecordInfo<
-      '//second',
-      '/second',
-      Record<never, never>,
-      Record<never, never>,
-      never
-    >;
-    '/[...path]': RouteRecordInfo<
-      '/[...path]',
+      | never
+    >,
+    '//[...path]': RouteRecordInfo<
+      '//[...path]',
       '/:path(.*)',
       { path: ParamValue<true> },
       { path: ParamValue<false> },
-      never
-    >;
+      | never
+    >,
+    '//about': RouteRecordInfo<
+      '//about',
+      '/about',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//contact': RouteRecordInfo<
+      '//contact',
+      '/contact',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//services': RouteRecordInfo<
+      '//services',
+      '/services',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//work': RouteRecordInfo<
+      '//work',
+      '/work',
+      Record<never, never>,
+      Record<never, never>,
+      | '//work/(index)'
+      | '//work/aster-bay'
+      | '//work/drift'
+      | '//work/fold'
+      | '//work/market-day'
+    >,
+    '//work/(index)': RouteRecordInfo<
+      '//work/(index)',
+      '/work',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//work/aster-bay': RouteRecordInfo<
+      '//work/aster-bay',
+      '/work/aster-bay',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//work/drift': RouteRecordInfo<
+      '//work/drift',
+      '/work/drift',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//work/fold': RouteRecordInfo<
+      '//work/fold',
+      '/work/fold',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '//work/market-day': RouteRecordInfo<
+      '//work/market-day',
+      '/work/market-day',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -70,21 +143,117 @@ declare module 'vue-router/auto-routes' {
    */
   export interface _RouteFileInfoMap {
     'src/pages/index.vue': {
-      routes: '/' | '//(index)' | '//second';
-      views: 'default';
-    };
+      routes:
+        | '/'
+        | '//(index)'
+        | '//[...path]'
+        | '//about'
+        | '//contact'
+        | '//services'
+        | '//work'
+        | '//work/(index)'
+        | '//work/aster-bay'
+        | '//work/drift'
+        | '//work/fold'
+        | '//work/market-day'
+      views:
+        | 'default'
+      pathParamNames:
+        | never
+    }
     'src/pages/index/(index).vue': {
-      routes: '//(index)';
-      views: never;
-    };
-    'src/pages/index/second.vue': {
-      routes: '//second';
-      views: never;
-    };
-    'src/pages/[...path].vue': {
-      routes: '/[...path]';
-      views: never;
-    };
+      routes:
+        | '//(index)'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/[...path].vue': {
+      routes:
+        | '//[...path]'
+      views:
+        | never
+      pathParamNames:
+        | 'path'
+    }
+    'src/pages/index/about.vue': {
+      routes:
+        | '//about'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/contact.vue': {
+      routes:
+        | '//contact'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/services.vue': {
+      routes:
+        | '//services'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/work.vue': {
+      routes:
+        | '//work'
+        | '//work/(index)'
+        | '//work/aster-bay'
+        | '//work/drift'
+        | '//work/fold'
+        | '//work/market-day'
+      views:
+        | 'default'
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/work/(index).vue': {
+      routes:
+        | '//work/(index)'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/work/aster-bay.vue': {
+      routes:
+        | '//work/aster-bay'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/work/drift.vue': {
+      routes:
+        | '//work/drift'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/work/fold.vue': {
+      routes:
+        | '//work/fold'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/index/work/market-day.vue': {
+      routes:
+        | '//work/market-day'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
   }
 
   /**
@@ -94,7 +263,9 @@ declare module 'vue-router/auto-routes' {
    * @internal
    */
   export type _RouteNamesForFilePath<FilePath extends string> =
-    _RouteFileInfoMap extends Record<FilePath, infer Info> ? Info['routes'] : keyof RouteNamedMap;
+    _RouteFileInfoMap extends Record<FilePath, infer Info>
+      ? Info['routes']
+      : keyof RouteNamedMap
 }
 
-export {};
+export {}

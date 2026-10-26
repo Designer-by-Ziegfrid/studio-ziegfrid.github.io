@@ -24,7 +24,26 @@ export default defineRouter((/* { store, ssrContext } */) => {
       : createWebHashHistory;
 
   const Router = createRouter({
-    scrollBehavior: () => ({ left: 0, top: 0 }),
+    scrollBehavior(to, _from, savedPosition) {
+      if (savedPosition) {
+        return savedPosition;
+      }
+
+      if (to.hash) {
+        const fontsReady =
+          typeof document !== 'undefined' && document.fonts
+            ? document.fonts.ready
+            : Promise.resolve();
+
+        return fontsReady.then(() => ({
+          el: to.hash,
+          top: 96,
+          behavior: 'smooth',
+        }));
+      }
+
+      return { left: 0, top: 0 };
+    },
     routes,
 
     // Leave this as is and make changes in quasar.conf.js instead!

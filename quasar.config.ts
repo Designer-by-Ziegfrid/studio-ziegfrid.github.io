@@ -11,7 +11,7 @@ export default defineConfig((/* ctx */) => {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
-    boot: [],
+    boot: ['fonts'],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#css
     css: ['app.scss'],
@@ -25,7 +25,6 @@ export default defineConfig((/* ctx */) => {
       // 'themify',
       // 'line-awesome',
 
-      'roboto-font', // optional, you are not bound to it
       'material-icons', // optional, you are not bound to it
     ],
 
@@ -45,10 +44,10 @@ export default defineConfig((/* ctx */) => {
       // https://v2.quasar.dev/quasar-cli-vite/page-routing-with-vue-router#filename-based-routing
       filenameBasedRouting: true,
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
 
-      // publicPath: '/',
+      publicPath: '/',
       // define: {},
       // defineEnv: {}
       // ignorePublicFolder: true,
@@ -99,7 +98,7 @@ export default defineConfig((/* ctx */) => {
       // directives: [],
 
       // Quasar plugins
-      plugins: [],
+      plugins: ['Meta', 'Notify'],
     },
 
     // animations: 'all', // --- includes all animations
@@ -150,12 +149,12 @@ export default defineConfig((/* ctx */) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-ssg/configuring-ssg
     ssg: {
-      // onSsgRendererError: 'abort',
+      error404HtmlFilename: '404.html',
+      ssgRendererDirectoryIndexes: true,
+      onSsgRendererError: 'abort',
       // ssgRendererConcurrency: 1,
       // ssgRendererRetryCount: 0,
       // ssgRendererRetryDelay: 1000,
-      // ssgRendererDirectoryIndexes: true,
-      // error404HtmlFilename: '404.html',
       // clientSideRenderingHtmlFilename: 'csr.html',
       // clientSideRenderingRoutes: [],
       // noPreloadTagRoutes: []

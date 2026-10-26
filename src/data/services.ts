@@ -1,0 +1,137 @@
+export interface Service {
+  title: string;
+  description: string;
+  icon: string;
+  items: string[];
+}
+
+export const services: Service[] = [
+  {
+    title: 'Custom UI/UX design',
+    description:
+      'A design built around your customers and your business — not a theme with your logo dropped in.',
+    icon: 'draw',
+    items: ['Discovery', 'Sitemap & flows', 'Wireframes', 'Visual design', 'Motion'],
+  },
+  {
+    title: 'Front-end engineering',
+    description:
+      'Fast, accessible interfaces built with Vue, Quasar, or the stack that makes sense for your project.',
+    icon: 'code',
+    items: ['Vue / Quasar', 'TypeScript', 'Responsive builds', 'Component systems'],
+  },
+  {
+    title: 'CMS & content',
+    description:
+      'Edit your pages, products, and stories without calling a developer for every typo.',
+    icon: 'edit_note',
+    items: ['Sanity', 'Strapi', 'Headless WordPress', 'Decap CMS'],
+  },
+  {
+    title: 'Booking & reservations',
+    description:
+      'Flows for rooms, tables, vehicles, appointments, and pickups that match how you actually operate.',
+    icon: 'event_available',
+    items: ['Availability', 'Scheduling', 'Deposits', 'Confirmations'],
+  },
+  {
+    title: 'E-commerce & payments',
+    description:
+      'Product catalogues, baskets, delivery slots, and payment integrations without the template ceiling.',
+    icon: 'shopping_bag',
+    items: ['Catalogues', 'Baskets', 'Stripe / local gateways', 'Delivery rules'],
+  },
+  {
+    title: 'Integrations',
+    description:
+      'Connect the tools your business already runs on, instead of rebuilding your operations around a page builder.',
+    icon: 'hub',
+    items: ['CRM', 'Email', 'Maps', 'Analytics', 'WhatsApp'],
+  },
+  {
+    title: 'Performance & SEO',
+    description:
+      'Fast pages, clean semantics, and technical SEO that gives your content a fair chance to be found.',
+    icon: 'speed',
+    items: ['Core Web Vitals', 'Metadata', 'Structured data', 'Sitemaps'],
+  },
+  {
+    title: 'Care & maintenance',
+    description:
+      'Ongoing updates, fixes, backups, and improvements — handled by the same studio that built it.',
+    icon: 'health_and_safety',
+    items: ['Updates', 'Backups', 'Monitoring', 'Small changes'],
+  },
+];
+
+export interface Engagement {
+  name: string;
+  label: string;
+  description: string;
+  bestFor: string;
+}
+
+export const engagements: Engagement[] = [
+  {
+    name: 'Launch',
+    label: 'Start fresh',
+    description:
+      'A new website from scratch: strategy, design, build, and launch. Ideal for a new business or a brand that has outgrown its first site.',
+    bestFor: 'New businesses, rebrands, first serious website',
+  },
+  {
+    name: 'Redesign',
+    label: 'Keep what works',
+    description:
+      'A considered redesign of an existing site. We keep the content and equity that still serve you, and rebuild the experience around what does not.',
+    bestFor: 'Outdated sites, poor conversion, mobile problems',
+  },
+  {
+    name: 'Custom build',
+    label: 'Break the ceiling',
+    description:
+      'Booking flows, e-commerce, dashboards, integrations, or anything a template cannot do. Designed and engineered around your operations.',
+    bestFor: 'Complex workflows, integrations, growing teams',
+  },
+  {
+    name: 'Care',
+    label: 'Stay looked after',
+    description:
+      'Ongoing maintenance, fixes, updates, and small improvements. Delivered through SiteMedic, our maintenance arm.',
+    bestFor: 'Launched sites that need a reliable pair of hands',
+  },
+];
+
+export const scopingPrinciples = [
+  {
+    number: '01',
+    title: 'Start with the outcome',
+    description:
+      'We begin with what the website needs to do for the business, not with a long list of features. Fewer, better decisions.',
+  },
+  {
+    number: '02',
+    title: 'Every feature earns its place',
+    description:
+      'If a feature does not help a customer or save you time, it does not belong in the first version. We would rather do six things well.',
+  },
+  {
+    number: '03',
+    title: 'Phase the rest',
+    description:
+      'There is always a next version. We plan it, price it, and build it when it makes sense — instead of overspending on day one.',
+  },
+];
+
+export const addOns = [
+  'Booking & reservations',
+  'E-commerce & payments',
+  'CMS setup & training',
+  'CRM & email integration',
+  'Maps & location pages',
+  'Analytics & reporting',
+  'Multilingual content',
+  'Blog & editorial',
+  'Custom dashboards',
+  'API integrations',
+];
